@@ -33,6 +33,18 @@ TEST_CASE("test sphere volume", "[sphere]") {
     REQUIRE(volume == -1.0f);
 }
 
+TEST_CASE("test box area", "[area]") {
+    Box b1{ {1, 1, 1}, {2, 2, 2 } };
+    float area = b1.area();
+    REQUIRE(area == 6.0f);
+}
+
+TEST_CASE("test box volume", "[area]") {
+    Box b1{ {1, 1, 1}, {2, 2, 2 } };
+    float area = b1.volume();
+    REQUIRE(area == 1.0f);
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

@@ -8,6 +8,11 @@ Sphere::Sphere(glm::vec3 const& cntr, float r) :
 	center_{ cntr },
 	radius_{ r } {}
 
+Sphere::Sphere(std::string name, glm::vec3 const& color, glm::vec3 const& cntr, float r) :
+	Shape(name, color),
+	center_{ cntr },
+	radius_{ r } {}
+
 float Sphere::area() const
 {
 	if (radius_ < 0) {

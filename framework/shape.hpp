@@ -9,6 +9,7 @@ class Shape {
 public:
 	Shape() = default;
 	Shape(std::string name, Color const& color_);
+	virtual ~Shape();
 	virtual float area() const = 0;
 	virtual float volume() const = 0;
 	virtual std::ostream& print(std::ostream& os) const;

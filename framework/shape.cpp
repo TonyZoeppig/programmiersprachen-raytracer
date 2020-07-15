@@ -3,7 +3,12 @@
 
 Shape::Shape(std::string name, Color const& color) :
 	name_{name},
-	color_{color} {}
+	color_{color} { std::cout << "Shape Constructor" << std::endl; }
+
+Shape::~Shape()
+{
+	std::cout << "Shape Destructor" << std::endl;
+}
 
 std::ostream& Shape::print(std::ostream& os) const
 {

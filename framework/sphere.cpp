@@ -6,12 +6,17 @@
 
 Sphere::Sphere(glm::vec3 const& cntr, float r) :
 	center_{ cntr },
-	radius_{ r } {}
+	radius_{ r } { std::cout << "Sphere Constructor" << std::endl; }
 
 Sphere::Sphere(std::string name, Color const& color, glm::vec3 const& cntr, float r) :
 	Shape(name, color),
 	center_{ cntr },
-	radius_{ r } {}
+	radius_{ r } { std::cout << "Sphere Constructor" << std::endl; }
+
+Sphere::~Sphere()
+{
+	std::cout << "Sphere Destructor" << std::endl;
+}
 
 float Sphere::area() const
 {

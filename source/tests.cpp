@@ -89,6 +89,21 @@ TEST_CASE("intersect_ray_sphere", "[intersect]")
     REQUIRE(hitpoint3.distance == 1.0f);
 }
 
+TEST_CASE("Excercise 5.8", "[Destructor}") {
+    std::cout << "Anfang Aufgabe 5.8 Testcase" << std::endl;
+    
+    Color red{ 255 , 0 , 0 };
+    glm::vec3 position{ 0.0f, 0.0f, 0.0f };
+    Sphere* s1 = new Sphere{"sphere0", red , position , 1.2f};
+    Shape* s2 = new Sphere{ "sphere1", red , position , 1.2f };
+    s1 -> print(std::cout);
+    s2 -> print(std::cout);
+    delete s1;
+    delete s2;
+
+    std::cout << "Ende Aufgabe 5.8 Testcase" << std::endl;
+}
+
 int main(int argc, char *argv[])
 {
     Box b{ "Box", {128, 128, 128}, {5, 5, 5}, {10, 10, 10} };

@@ -1,4 +1,5 @@
 #include "box.hpp"
+#include <iostream>
 
 Box::Box(glm::vec3 const& min, glm::vec3 const& max) :
 	min_{ min },
@@ -23,4 +24,14 @@ float Box::volume() const
 	return (max_.x - min_.x) * (max_.y - min_.y) * (max_.z - min_.z);
 }
 
+std::ostream& Box::print(std::ostream& os) const
+{
+	Shape::print(os);
+	os << ", Min (x|y|z): " << min_.x << " | " << min_.y << " | " << min_.z << ", Max (x|y|z): " << max_.x << " | " << max_.y << " | " << max_.z;
+	return os;
+}
 
+std::ostream& operator<<(std::ostream& os, Box const& b)
+{
+	return b.print(os);
+}

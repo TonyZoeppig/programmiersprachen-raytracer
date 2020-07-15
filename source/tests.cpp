@@ -4,6 +4,7 @@
 #include <glm/vec3.hpp>
 #include "box.hpp"
 #include "sphere.hpp"
+#include <iostream>
 
 TEST_CASE("test sphere area", "[sphere]") {
     Sphere s1{ {1, 1, 1}, 2.0f };
@@ -47,5 +48,11 @@ TEST_CASE("test box volume", "[area]") {
 
 int main(int argc, char *argv[])
 {
-  return Catch::Session().run(argc, argv);
+    Box b{ "Box", {128, 128, 128}, {5, 5, 5}, {10, 10, 10} };
+    std::cout << b << std::endl;
+
+    Sphere s{ "Sphere", {128, 128, 128}, {0, 0, 0}, 5.0f };
+    std::cout << s << std::endl;
+
+    return Catch::Session().run(argc, argv);
 }

@@ -30,3 +30,15 @@ float Sphere::volume() const
 	}
 	return (4 * M_PI * pow(radius_, 3.0f))/3;
 }
+
+std::ostream& Sphere::print(std::ostream& os) const
+{
+	Shape::print(os);
+	os << ", Center (x|y|z): " << center_.x << " | " << center_.y << " | " << center_.z << ", Radius: " << radius_;
+	return os;
+}
+
+std::ostream& operator<<(std::ostream& os, Sphere const& s)
+{
+	return s.print(os);
+}
